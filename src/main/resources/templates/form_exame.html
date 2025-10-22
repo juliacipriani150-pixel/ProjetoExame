@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <title>Formulário Exame</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1 th:text="${exame.id != null} ? 'Editar Exame' : 'Novo Exame'"></h1>
+    <form th:action="@{/exame}" th:object="${exame}" method="post">
+        <input type="hidden" th:if="${exame != null}" th:field="{id}" />
+
+        <div class="form-group">
+
+            <label for="data">Data do Exame:</label>
+            <input type="LocalDate" id="data" th:field="{data}" required>
+        </div>
+
+        <div class="form-group">
+
+            <label for="horario">Horário do Exame:</label>
+            <input type="time" id="horario" th:field="{horario}" required>
+        </div>
+
+        <div class="form-group">
+
+            <label for="local">Sala onde será realizado o exame:</label>
+            <input type="text" id="local" th:field="{local}" required>
+        </div>
+
+        <div class="form-group">
+
+            <label for="motivo">Motivo do Exame:</label>
+            <input type="text" id="motivo" th:field="{motivo}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="paciente">Paciente:</label>
+            <select id="paciente" th:field="{paciente.id}">
+                <option th:each="paciente : ${paciente}" th:value="${paciente.id}" th:text="${paciente.nome}"></option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="laboratorio">Laboratório:</label>
+            <select id="laboratorio" th:field="{laboratorio.id}">
+                <option th:each="laboratorio ? ${laboratorio}" th:value="${laboratorio.id}" th:text="${laboratorio.nome}"></option>
+            </select>
+        </div>
+
+        <button type="submit" th:text="${exame.id != null} ? 'Atualizar' : 'Salvar'">Salvar</button>
+    </form>
+    <a href="home.html">Voltar</a>
+
+</body>
+
+</html>
