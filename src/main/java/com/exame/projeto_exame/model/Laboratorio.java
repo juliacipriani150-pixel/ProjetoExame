@@ -18,6 +18,15 @@ public class Laboratorio {
     private String nome;
     private String localizacao;
     private String telefone;
+    private String cidade;
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
 
     @OneToMany(mappedBy = "laboratorio", cascade = CascadeType.ALL)
     private List<Exame> exame = new ArrayList<>();

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+<head>
+    <title>Laboratórios</title>
+</head>
+
+<body>
+    <h1>Pais</h1>
+    <a href="/laboratorios/novo">Novo Laboratório</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Localização</th>
+                <th>Telefone</th>
+                <th>Cidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="laboratorio : ${laboratorio}">
+                <td th:text="${laboratorio.id}"></td>
+                <td th:text="${laboratorio.nome}"></td>
+                <td th:text="${laboratorio.localizacao}"></td>
+                <td th:text="${laboratorio.telefone}"></td>
+                <td th:text="${laboratorio.cidade}"></td>
+                <td>
+                    <a href="@{/laboratorios/{id}/editar(id=${laboratorio.id})}">Editar</a>
+                    <a href="@{/laboratorios/{id}/deletar(id=${laboratorio.id})}">Deletar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/">Home</a>
+</body>
+
+</html>

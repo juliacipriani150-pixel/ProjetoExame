@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" href="css/style.css">
+
+<head>
+    <title>Formulário de Pai</title>
+</head>
+
+<body>
+    <h1>Mães</h1>
+    <a href="/pacientes/novo">Novo Paciente</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Data Nascimento</th>
+                <th>Telefone</th>
+                <th>CPF</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="paciente : ${pacientes}">
+                <td th:text="${paciente.id}"></td>
+                <td th:text="${paciente.nome}"></td>
+                <td th:text="${paciente.dataNascimento}"></td>
+                <td th:text="${paciente.telefone}"></td>
+                <td th:text="${paciente.cpf}"></td>
+                <td>
+                    <a href="@{/paciente/{id}/editar(id=${paciente.id})}">Editar</a>
+                    <a href="@{/paciente/{id}/deletar(id=${paciente.id})}">Deletar</a>
+                </td>
+            </tr>
+            <a href="/">Home</a>
+        </tbody>
+
+</body>
+
+</html>

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
+    <link rel="stylesheet" href="/css/style.css">
 
 <head>
     <title>Formulário Exame</title>
-    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <h1 th:text="${exame.id != null} ? 'Editar Exame' : 'Novo Exame'"></h1>
-    <form th:action="@{/exame}" th:object="${exame}" method="post">
-        <input type="hidden" th:if="${exame != null}" th:field="{id}" />
+    <h1 th:text="${exame.id != null} ? 'Editar Exame' : 'Novo Exame'">Formulário de Exames:</h1>
+    <form th:action="@{/exames}" th:object="${exame}" method="post">
+        <input type="hidden" th:if="${exame.id !=null}" th:field="*{id}" />
 
         <div class="form-group">
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<link rel="stylesheet" href="/css/style.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Exames</title>
+</head>
+
+<body>
+    <h1>Lista de Exames</h1>
+
+    <a href="/exames/novo">Novo Exame</a>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Data</th>
+                <th>Horário</th>
+                <th>Sala</th>
+                <th>Motivo</th>
+                <th>Laboratório</th>
+                <th>Paciente</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop Thymeleaf -->
+            <tr th:each="exame : ${exame}">
+                <td th:text="${exame.id}">1</td>
+                <td th:text="${exame.data.nome}">Data do exame</td>
+                <td th:text="${exame.horario.nome}">Horário do exame</td>
+                <td th:text="${exame.sala.nome}">Nome da sala</td>
+                <td th:text="${exame.motivo.nome}">Motivo do exame</td>
+                <td th:text="${exame.laboratorio.nome}">Nome do laboratório</td>
+                <td th:text="${exame.paciente.nome}">Nome da Paciente</td>
+                <td>
+                    <a th:href="@{|/exames/${exame.id}/editar|}">Editar</a>
+                    <a th:href="@{|/exames/${exame.id}/deletar|}">Deletar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
