@@ -45,7 +45,7 @@
         <div class="form-group">
             <label for="laboratorio">Laboratório:</label>
             <select id="laboratorio" th:field="*{laboratorio.id}">
-                <option th:each="laboratorio ? ${laboratorio}" th:value="${laboratorio.id}" th:text="${laboratorio.nome}"></option>
+                <option th:each="laboratorio : ${laboratorio}" th:value="${laboratorio.id}" th:text="${laboratorio.nome}"></option>
             </select>
         </div>
 
