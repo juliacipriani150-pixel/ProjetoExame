@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 
-<link rel="stylesheet" href="/css/style.css">
 <head>
     <meta charset="UTF-8">
     <title>Lista de Exames</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -27,13 +27,13 @@
         </thead>
         <tbody>
             <tr th:each="exame : ${exame}">
-                <td th:text="${exame.id}">1</td>
-                <td th:text="${exame.data.nome}">Data do exame</td>
-                <td th:text="${exame.horario.nome}">Horário do exame</td>
-                <td th:text="${exame.sala.nome}">Nome da sala</td>
-                <td th:text="${exame.motivo.nome}">Motivo do exame</td>
-                <td th:text="${exame.laboratorio.nome}">Nome do laboratório</td>
-                <td th:text="${exame.paciente.nome}">Nome da Paciente</td>
+                <td th:text="${exame.id}">id</td>
+                <td th:text="${exame.data}">Data</td>
+                <td th:text="${exame.horario}">Horário</td>
+                <td th:text="${exame.local}">Sala</td>
+                <td th:text="${exame.motivo}">Motivo</td>
+                <td th:text="${exame.laboratorio.id}">Laboratório</td>
+                <td th:text="${exame.paciente.id}">Paciente</td>
                 <td>
                     <a th:href="@{|/exames/${exame.id}/editar|}">Editar</a>
                     <a th:href="@{|/exames/${exame.id}/deletar|}">Deletar</a>
@@ -41,6 +41,7 @@
             </tr>
         </tbody>
     </table>
+
     <a href="/">Home</a>
 </body>
 

@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <h1>Mães</h1>
+    <h1>Pacientes</h1>
     <a href="/pacientes/novo">Novo Paciente</a>
     <table>
         <thead>
@@ -28,8 +28,8 @@
                 <td th:text="${paciente.telefone}"></td>
                 <td th:text="${paciente.cpf}"></td>
                 <td>
-                    <a href="@{/paciente/{id}/editar(id=${paciente.id})}">Editar</a>
-                    <a href="@{/paciente/{id}/deletar(id=${paciente.id})}">Deletar</a>
+                    <a th:href="@{|/pacientes/${paciente.id}/editar|}">Editar</a>
+                    <a th:href="@{|/pacientes/${paciente.id}/deletar|}">Deletar</a>
                 </td>
             </tr>
         </tbody>

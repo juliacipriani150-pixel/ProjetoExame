@@ -28,8 +28,8 @@
                 <td th:text="${laboratorio.telefone}"></td>
                 <td th:text="${laboratorio.cidade}"></td>
                 <td>
-                    <a href="@{/laboratorios/{id}/editar(id=${laboratorio.id})}">Editar</a>
-                    <a href="@{/laboratorios/{id}/deletar(id=${laboratorio.id})}">Deletar</a>
+                    <a th:href="@{|/laboratorios/${laboratorio.id}/editar|}">Editar</a>
+                    <a th:href="@{|/laboratorios/${laboratorio.id}/deletar|}">Deletar</a>
                 </td>
             </tr>
         </tbody>

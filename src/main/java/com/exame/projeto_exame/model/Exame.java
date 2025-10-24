@@ -1,6 +1,5 @@
 package com.exame.projeto_exame.model;
 
-import java.sql.Time;
 import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
@@ -17,7 +16,7 @@ public class Exame {
     
     private Long id;
     private LocalDate data;
-    private Time horario;
+    private String horario;
     private String motivo;
     private String local;
 
@@ -47,11 +46,11 @@ public class Exame {
         this.data = data;
     }
 
-    public Time getHorario() {
+    public String getHorario() {
         return horario;
     }
 
-    public void setHorario(Time horario) {
+    public void setHorario(String horario) {
         this.horario = horario;
     }
 
