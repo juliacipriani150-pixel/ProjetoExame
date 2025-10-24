@@ -14,37 +14,37 @@
         <div class="form-group">
 
             <label for="data">Data do Exame:</label>
-            <input type="LocalDate" id="data" th:field="{data}" required>
+            <input type="LocalDate" id="data" th:field="*{data}" required>
         </div>
 
         <div class="form-group">
 
             <label for="horario">Horário do Exame:</label>
-            <input type="time" id="horario" th:field="{horario}" required>
+            <input type="time" id="horario" th:field="*{horario}" required>
         </div>
 
         <div class="form-group">
 
             <label for="local">Sala onde será realizado o exame:</label>
-            <input type="text" id="local" th:field="{local}" required>
+            <input type="text" id="local" th:field="*{local}" required>
         </div>
 
         <div class="form-group">
 
             <label for="motivo">Motivo do Exame:</label>
-            <input type="text" id="motivo" th:field="{motivo}" required>
+            <input type="text" id="motivo" th:field="*{motivo}" required>
         </div>
 
         <div class="form-group">
             <label for="paciente">Paciente:</label>
-            <select id="paciente" th:field="{paciente.id}">
+            <select id="paciente" th:field="*{paciente.id}">
                 <option th:each="paciente : ${paciente}" th:value="${paciente.id}" th:text="${paciente.nome}"></option>
             </select>
         </div>
 
         <div class="form-group">
             <label for="laboratorio">Laboratório:</label>
-            <select id="laboratorio" th:field="{laboratorio.id}">
+            <select id="laboratorio" th:field="*{laboratorio.id}">
                 <option th:each="laboratorio ? ${laboratorio}" th:value="${laboratorio.id}" th:text="${laboratorio.nome}"></option>
             </select>
         </div>
