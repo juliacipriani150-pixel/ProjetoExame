@@ -1,221 +1,83 @@
-/* ===== ESTILO GERAL ===== */
 body {
-    font-family: "Poppins", Arial, sans-serif;
-    background-color: #fafafa;
-    color: #444;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-/* ===== CABEÇALHOS ===== */
-h1, h2, h3 {
-    text-align: center;
-    color: #6b5b95; /* Lavanda suave */
-    font-weight: 600;
-    margin: 16px 0;
-}
-
-h1 {
-    margin-top: 40px;
-    font-size: 2em;
-}
-
-h2 {
-    font-size: 1.3em;
-    color: #7c6ca8;
-}
-
-h3 {
-    font-size: 1.1em;
-    color: #8e7cbf;
-}
-
-/* ===== LINKS GERAIS ===== */
-a {
-    text-decoration: none;
-    color: #6b5b95;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-/* ===== BOTÕES / LINKS DE AÇÃO ===== */
-a[href*="novo"],
-a[href*="editar"],
-a[href*="deletar"],
-a[href="/"],
-ul li a {
-    background-color: #ece8f8;
-    border-radius: 8px;
-    padding: 8px 14px;
-    margin: 6px;
-    display: inline-block;
-    color: #5c4b8a;
-    font-size: 0.95em;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    text-align: center;
-}
-
-a:hover,
-ul li a:hover {
-    background-color: #ded6f4;
-    transform: translateY(-1px);
-}
-
-/* ===== LISTAS (Página Inicial) ===== */
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 30px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    padding: 5px;
     gap: 10px;
 }
 
-/* ===== TABELAS (Listagens) ===== */
-table {
-    width: 90%;
-    max-width: 900px;
-    border-collapse: collapse;
-    margin: 30px 0;
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    border-radius: 10px;
-    overflow: hidden;
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
 }
 
-thead {
-    background-color: #f3f0fa;
-    color: #5a4b81;
-    font-weight: 600;
-}
-
-th, td {
-    text-align: left;
-    padding: 12px 16px;
-    border-bottom: 1px solid #eee;
-    font-size: 0.95em;
-}
-
-tbody tr:hover {
-    background-color: #f9f6ff;
-}
-
-/* ===== COLUNA DE AÇÕES ===== */
-td a {
-    margin-right: 8px;
-}
-
-td a[href*="editar"] {
-    background-color: #e0daf4;
-}
-
-td a[href*="editar"]:hover {
-    background-color: #d1c6f0;
-}
-
-td a[href*="deletar"] {
-    background-color: #f4dada;
-}
-
-td a[href*="deletar"]:hover {
-    background-color: #edc4c4;
-}
-
-/* ===== LINK HOME ===== */
-a[href="/"] {
-    margin-bottom: 40px;
-    background-color: #f1eef9;
-}
-
-a[href="/"]:hover {
-    background-color: #e5def6;
-}
-
-/* ===== FORMULÁRIOS FUTUROS ===== */
 form {
-    background-color: #fff;
-    padding: 24px 28px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    margin: 30px 0;
-    max-width: 600px;
-    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 20px;
+    width: 500px;
+    height: 50vh;
+    padding: 20px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+input,
+select {
+    border: 1px solid #555;
+    width: 100%;
+    border-radius: 4px;
+    height: 30px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+ul,
+li {
+    width: 100%;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
 }
 
 label {
+    font-size: 16px;
+    font-weight: bold;
+    /* margin: 8px 0; */
     display: block;
-    font-weight: 500;
-    margin-bottom: 4px;
-    color: #5a4b81;
 }
 
-input, select, textarea {
+button {
     width: 100%;
-    padding: 8px 10px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-family: inherit;
-    font-size: 0.95em;
-    margin-bottom: 16px;
-    box-sizing: border-box;
-    transition: border-color 0.3s;
-}
-
-input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: #b2a4e0;
-    box-shadow: 0 0 3px rgba(178, 164, 224, 0.5);
-}
-
-button, input[type="submit"] {
-    background-color: #d9d1f0;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
     border: none;
-    border-radius: 6px;
-    padding: 10px 16px;
-    font-weight: 500;
-    color: #4a3d77;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 16px;
 }
 
-button:hover, input[type="submit"]:hover {
-    background-color: #c9b9f0;
-}
-
-/* ===== RESPONSIVIDADE ===== */
-@media (max-width: 768px) {
-    body {
-        padding: 0 10px;
-    }
-
-    table {
-        font-size: 0.85em;
-        width: 100%;
-    }
-
-    th, td {
-        padding: 10px 8px;
-    }
-
-    ul {
-        gap: 6px;
-    }
-
-    a, ul li a {
-        font-size: 0.9em;
-        padding: 8px 12px;
-    }
-
-    form {
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 1.6em;
-    }
+button:hover {
+    background-color: #45a049;
 }
