@@ -32,8 +32,8 @@
                 <td th:text="${exame.horario}">Horário</td>
                 <td th:text="${exame.local}">Sala</td>
                 <td th:text="${exame.motivo}">Motivo</td>
-                <td th:text="${exame.laboratorio.name}">Laboratório</td>
-                <td th:text="${exame.paciente.name}">Paciente</td>
+                <td th:text="${exame.laboratorio.nome}">Laboratório</td>
+                <td th:text="${exame.paciente.nome}">Paciente</td>
                 <td>
                     <a th:href="@{|/exames/${exame.id}/editar|}">Editar</a>
                     <a th:href="@{|/exames/${exame.id}/deletar|}">Deletar</a>
