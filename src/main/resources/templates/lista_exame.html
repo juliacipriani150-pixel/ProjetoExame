@@ -10,7 +10,7 @@
 <body>
     <h1>Lista de Exames</h1>
 
-    <a href="/exames/novo">Novo Exame</a>
+    <a href="/exames">Novo Exame</a>
 
     <table>
         <thead>
@@ -26,7 +26,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr th:each="exame : ${exame}">
+            <tr th:each="exame : ${exames}">
                 <td th:text="${exame.id}">id</td>
                 <td th:text="${exame.data}">Data</td>
                 <td th:text="${exame.horario}">Horário</td>
